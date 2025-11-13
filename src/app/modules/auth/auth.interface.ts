@@ -7,4 +7,9 @@ export type ISignUp = {
   profilePic?: string;
 };
 
+export type ISignIn = {
+  email: string;
+  password: string;
+};
+
 export type SignUpModel = Model<ISignUp, Record<string, unknown>>;
