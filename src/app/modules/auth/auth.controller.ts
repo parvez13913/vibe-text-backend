@@ -3,6 +3,7 @@ import { StatusCodes } from "http-status-codes";
 import config from "../../../config";
 import catchAsync from "../../../shared/catchAsync";
 import sendResponse from "../../../shared/sendResponse";
+import { sendWelcomeEmail } from "../../lib/email/emailHandler";
 import { AuthService } from "./auth.service";
 
 const signUp = catchAsync(async (req: Request, res: Response) => {
@@ -17,13 +18,13 @@ const signUp = catchAsync(async (req: Request, res: Response) => {
     });
   }
 
-  //   if (!!result?._id) {
-  //     await sendWelcomeEmail(
-  //       config.email_from || "",
-  //       config.email_from_name || "",
-  //       config.client_url || ""
-  //     );
-  //   }
+  if (!!result?._id) {
+    await sendWelcomeEmail(
+      config.email_from || "",
+      config.email_from_name || "",
+      config.client_url || ""
+    );
+  }
 
   sendResponse(res, {
     statusCode: StatusCodes.OK,

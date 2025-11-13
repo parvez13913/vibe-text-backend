@@ -1,6 +1,7 @@
 import { Model } from "mongoose";
 
 export type ISignUp = {
+  _id: any;
   fullName: string;
   email: string;
   password: string;

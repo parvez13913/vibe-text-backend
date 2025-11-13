@@ -14,10 +14,15 @@ const signUp = async (payload: ISignUp) => {
   }
 
   const result = await User.create(payload);
+
+  const user = result as ISignUp;
+
   let token = null;
   if (result) {
     const secret = config.jwtSecret as string;
-    token = generateToken(result._id.toString(), secret);
+    token = generateToken(result?._id?.toString(), secret);
+
+    result.password = "";
   }
 
   return { result, token };
