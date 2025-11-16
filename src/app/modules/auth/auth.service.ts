@@ -47,7 +47,10 @@ const signIn = async (payload: ISignIn) => {
   return { user: isUserExis, token };
 };
 
+const updateProfile = async () => {};
+
 export const AuthService = {
   signUp,
   signIn,
+  updateProfile,
 };
