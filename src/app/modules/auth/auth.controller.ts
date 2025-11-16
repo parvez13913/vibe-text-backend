@@ -8,6 +8,7 @@ import { AuthService } from "./auth.service";
 
 const signUp = catchAsync(async (req: Request, res: Response) => {
   const { ...signUpdata } = req.body;
+
   const { result, token } = await AuthService.signUp(signUpdata);
   if (token) {
     res.cookie("token", token, {
@@ -30,16 +31,12 @@ const signUp = catchAsync(async (req: Request, res: Response) => {
     statusCode: StatusCodes.OK,
     success: true,
     message: "User Create Successfully !!",
-    data: {
-      result,
-      token,
-    },
   });
 });
 
 const signIn = catchAsync(async (req: Request, res: Response) => {
   const { ...signIndata } = req.body;
-  const { user, token } = await AuthService.signIn(signIndata);
+  const { token } = await AuthService.signIn(signIndata);
 
   if (token) {
     res.cookie("token", token, {

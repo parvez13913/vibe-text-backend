@@ -19,7 +19,6 @@ const signUpSchema = new Schema<ISignUp>(
       type: String,
       required: true,
       minLength: 6,
-      select: false,
     },
 
     profilePic: {
