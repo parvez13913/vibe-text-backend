@@ -1,11 +1,16 @@
 import express from "express";
-import { AuthRoutes } from "../modules/auth/auth.route";
+import { AuthRoutes } from "../models/auth/auth.route";
+import { MessageRouter } from "../models/message/message.router";
 
 const router = express.Router();
 const moduleRoutes = [
   {
     path: "/auth",
     route: AuthRoutes,
+  },
+  {
+    path: "/message",
+    route: MessageRouter,
   },
 ];
 

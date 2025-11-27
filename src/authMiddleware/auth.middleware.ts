@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import jwt from "jsonwebtoken";
-import { User } from "../app/modules/auth/auth.module";
+import { User } from "../app/models/auth/auth.model";
 import config from "../config";
 import ApiError from "../shared/apiError";
 

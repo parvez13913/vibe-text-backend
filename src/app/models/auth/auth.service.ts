@@ -4,7 +4,7 @@ import config from "../../../config";
 import ApiError from "../../../shared/apiError";
 import { generateToken } from "../../lib/utils";
 import { ISignIn, ISignUp } from "./auth.interface";
-import { User } from "./auth.module";
+import { User } from "./auth.model";
 
 const signUp = async (payload: ISignUp) => {
   const isUserExis = await User.findOne({ email: payload?.email });

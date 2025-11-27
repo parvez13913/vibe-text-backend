@@ -16,4 +16,7 @@ export default {
   client_url: process.env.CLIENT_URL,
   arc_jet_key: process.env.ARCJET_KEY,
   arc_jet_env: process.env.ARCJET_ENV,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  api_key: process.env.CLOUDINARY_API_KEY,
 };
