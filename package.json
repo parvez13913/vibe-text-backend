@@ -12,6 +12,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@arcjet/inspect": "^1.0.0-beta.15",
+    "@arcjet/node": "^1.0.0-beta.15",
     "bcrypt": "^6.0.0",
     "bcrypt-ts": "^7.1.0",
     "cookie-parser": "^1.4.7",

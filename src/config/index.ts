@@ -14,4 +14,6 @@ export default {
   app_password: process.env.APP_PASSWORD,
   email_from_name: process.env.EMAIL_FROM_NAME,
   client_url: process.env.CLIENT_URL,
+  arc_jet_key: process.env.ARCJET_KEY,
+  arc_jet_env: process.env.ARCJET_ENV,
 };
