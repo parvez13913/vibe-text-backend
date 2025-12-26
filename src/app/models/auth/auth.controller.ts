@@ -51,8 +51,12 @@ const signIn = catchAsync(async (req: Request, res: Response) => {
     statusCode: StatusCodes.OK,
     success: true,
     message: "Sign in Successfully !!",
+    data: {
+      token: token,
+    },
   });
 });
+
 const signOut = catchAsync(async (req: Request, res: Response) => {
   res.cookie("token", "", { maxAge: 0 });
 
@@ -63,8 +67,22 @@ const signOut = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const updateProfile = catchAsync(async (req: Request, res: Response) => {
+  const userId = req.user?._id;
+  const payload = req.body;
+  const result = await AuthService.updateProfile(userId, payload);
+
+  sendResponse(res, {
+    statusCode: StatusCodes.OK,
+    success: true,
+    message: "Profile updated Successfully !!",
+    data: result,
+  });
+});
+
 export const AuthController = {
   signUp,
   signIn,
   signOut,
+  updateProfile,
 };

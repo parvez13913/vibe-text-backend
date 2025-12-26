@@ -8,6 +8,13 @@ export type ISignUp = {
   profilePic?: string;
 };
 
+export type TProfileUpdate = {
+  fullName: string;
+  email: string;
+  password: string;
+  profilePic?: string;
+};
+
 export type ISignIn = {
   email: string;
   password: string;
