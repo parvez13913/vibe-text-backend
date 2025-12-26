@@ -80,9 +80,20 @@ const updateProfile = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const check = catchAsync(async (req: Request, res: Response) => {
+  const result = req.user;
+  sendResponse(res, {
+    statusCode: StatusCodes.OK,
+    success: true,
+    message: "Active!!",
+    data: result,
+  });
+});
+
 export const AuthController = {
   signUp,
   signIn,
   signOut,
   updateProfile,
+  check,
 };

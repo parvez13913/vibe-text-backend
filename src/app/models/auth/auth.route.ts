@@ -17,4 +17,6 @@ router.patch(
   AuthController.updateProfile
 );
 
+router.get("/check", protectedRoute, AuthController.check);
+
 export const AuthRoutes = router;
